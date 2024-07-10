@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Save Input as CSV</title>
+</head>
+
+<body>
+    <h2>Enter Your Text</h2>
+    <form id="textForm">
+        <textarea id="userInput" rows="10" cols="50"></textarea><br><br>
+        <input type="button" value="Submit" onclick="appendAndSaveAsCSV()">
+    </form>
+
+    <script>
+        function appendAndSaveAsCSV() {
+            // Get the input from the textarea
+            var userInput = document.getElementById('userInput').value;
+            // Split the input into lines
+            var lines = userInput.split('\n');
+
+            // Retrieve existing CSV content from local storage
+            var existingCsvContent = localStorage.getItem('csvContent') || '';
+
+            // Append new lines to existing content
+            lines.forEach(function(line) {
+                existingCsvContent += line;
+            });
+
+            // Save the updated content back to local storage
+            localStorage.setItem('csvContent', existingCsvContent);
+
+            // Create a Blob from the CSV content
+            var blob = new Blob([existingCsvContent], {
+                type: 'text/csv'
+            });
+            // Create a link element
+            var link = document.createElement('a');
+            // Set the download attribute with a filename
+            // link.download = 'user_input.csv';
+            // Create an object URL for the Blob
+            link.href = window.URL.createObjectURL(blob);
+            // Append the link to the body
+            document.body.appendChild(link);
+            // Programmatically click the link to trigger the download
+            link.click();
+            // Remove the link from the document
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+
+</html>

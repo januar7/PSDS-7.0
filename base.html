@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        
+        .submit-button {
+            background-color: #c80024;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .submit-button:hover {
+            opacity: 0.8;
+        }
+        
+        textarea {
+            width: 300px;
+            height: 100px;
+            margin-top: 10px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h4>Sebelumnya Isi dulu nama kelompok sama siapa sih angota kalian?? &#128516</h4>
+        <!-- take input from user   nama kelompok -->
+
+        <input type="text" id="name" placeholder="Nama Kelompok(Optional)">
+        <input type="text" id="anggota" placeholder="">
+        <textarea id="anggota" placeholder="Nama Anggota+ NIM(one per line)"></textarea>
+        <button class="submit-button" onclick="generateCSV()">Submit</button>
+        <script src="simpan_csv1.js"></script>
+        <h4>Dataset apa nih yang kalian pakai &#129300 </h4>
+    </div>
+    <div>
+
+
+        <!--<script>
+              bikin script untuk merandom dataset yang diselect berikut link gitHubnya 
+              akan ada 15 dataaet
+        </script>
+    -->
+    </div>
+
+    <div>
+        <!-- 
+            Selanjutjya soal akan diprint . di generate pdf nya
+        -->
+    </div>
+
+
+</body>
+
+</html>
