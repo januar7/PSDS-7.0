@@ -17,6 +17,5 @@ form.addEventListener('submit', e => {
             body: new FormData(form)
         })
         .then(response => alert('Data sukses diinput'))
-        .then(response => console.log('Data sukses diinput', response))
         .catch(error => console.error('Error', error.message))
 });
