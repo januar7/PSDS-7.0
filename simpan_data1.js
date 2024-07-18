@@ -10,6 +10,11 @@ function submitform() {
         alert('Anggotanya siapa? Masa engga ada anggota sih :v');
         return;
     }
+    if (anggota.length > 4) {
+        alert('Maksimal 4 anggota yang bisa ditambahkan.');
+        return;
+    }
+
 }
 const form = document.getElementById('response_1');
 form.addEventListener('submit', e => {
@@ -22,4 +27,5 @@ form.addEventListener('submit', e => {
         })
         .then(response => alert('Data sukses diinput'))
         .catch(error => console.error('Error!!', error.message))
+    form.reset()
 });

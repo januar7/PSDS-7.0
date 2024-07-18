@@ -53,19 +53,28 @@
     <link rel="icon" type="images/jpg" href="images\Logo PSDS.png">
     <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
     <script src="simpan_data1.js"></script>
+    <script src="upload_data1.js"></script>
+    <script src="pilih_opsi.js"></script>
 </head>
 
 <body>
     <div class=header>
-        <!-- bikin header yang terdiri dari icon prodi dan logo psds dengan latar belakang gradient ijo biru-->
+        <!-- bikin header yang terdiri dari icon prodi dan logo psds(sebalah kanan) dengan latar belakang gradient merah biru  dengan tulisan  "Final Project Kelas Mahir" di sebelah kiri-->
     </div>
     <div class="container">
         <h4>Sebelumnya Isi dulu nama kelompok sama siapa sih angota kalian?? &#128516</h4>
         <!-- take input from user   nama kelompok -->
         <form id="response_1" method="post" action="https://script.google.com/macros/s/AKfycbx9FHP25FcTkpuOfrZW5gqQ0AvTtWEQpEBAul_-eOiNrOQq2cHVO9x8jG1r5-r-plN_WQ/exec" name="final_response" autocomplete="off">
 
-            <input type="text" id="name" name="Nama_Kelompok" placeholder="Nama Kelompok(Optional)"><br>
+            <input type="text" id="name" name="Nama_Kelompok" placeholder="Nama Kelompok"><br>
             <textarea id="anggota" name="Anggota" placeholder="Nama Anggota+ NIM(one per line)" autocapitalize="characters"></textarea><br>
+            <label for="choose">Pilih salah satu :</label>
+            <select name="pilihan" id="choose">
+                <option value="regresi"> Regresi </option>
+                <option value="classify">Klasifikasi  </option>
+                <option value="cluster"> Klasterisasi </option>
+
+            </select><br>
             <button type="submit" class="submit-button" onclick="submitform()">Submit</button>
 
         </form>
@@ -76,8 +85,12 @@
 
 
         <!--<script>
-              bikin script untuk merandom dataset yang diselect berikut link gitHubnya 
+              random file from github . random select using JS
+
+              bikin script untuk merandom dataset yang diselect berikut link gitHubnya atau Dataet , tapi yang ditampilkan di html juga ditambah nama dataset
               akan ada 15 dataaet
+              tag problem Machine Learning terbagi menjadi 3 , yakni Regresi, Klasifikasi dan Clustering
+              ada data khusus klastering ada data khusus klasifikasi 
         </script>
     -->
     </div>
@@ -86,6 +99,33 @@
         <!-- 
             Selanjutjya soal akan diprint . di generate pdf nya
         -->
+    </div>
+    <div class="container">
+        <!--upload file tugas -->
+        <h4>Wahhh,Selamat Final Projectmu udah selesai, Yuk kumpulin disini file projectnyaa &#128516 </h4>
+        <!--<form id="response_2" method="post" action="" name="upload_1" autocomplete="off">    
+
+            <input type="text" id="name" name="Nama_Kelompok" placeholder="Nama Kelompok(Optional)"><br>
+            <textarea id="anggota" name="Anggota" placeholder="Nama Anggota+ NIM(one per line)" autocapitalize="characters"></textarea><br>
+            <button type="submit" class="submit-button" onclick="submitform()">Submit</button>    
+        </form> -->
+
+        <!-- <input type="file"  name="notebook" accept=".ipynb" required> -->
+        <!--File pptx-->
+        <form id="response_2" method="post" action="https://script.google.com/macros/s/AKfycbwJjJIVjE-xR4sA2uxCROE5GBGHUNerRLJ5yszFA8ZhXKQ3o0e6U0RrXdUWg19DZhU0gQ/exec" name="upload_1" autocomplete="off">
+            <input type="hidden" value="" name="fileContent" id="fileContent">
+            <input type="hidden" value="" name="filename" id="filename">
+            <!-- FIle PYThon notebook-->
+            <label for="ipynb">File IPYNBnya kumpul disini ya :</label>
+            <input type="file" id="ipynb" name="file_ipynb" accept=".ipynb" required><br>
+            <label for="pptx">File PPTnya kumpul disini ya :</label>
+            <input type="file" id="pptx" name="file_pptx" accept=".ppt ,.pptx" required><br>
+            <button type="submit" class="submit-button" style="width: 100%;" onclick="UploadFile();">Submit</button>
+        </form>
+        <!-- Rename file ppt dan ipynb dengan nama dan NIM PJ kelompok:  {NIM}_{NAMA}_{nama_file}.pptx/.ppt {NIM}_{NAMA}_{nama_file}.ipynb
+
+
+
     </div>
 
 
