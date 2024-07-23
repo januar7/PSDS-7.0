@@ -3,19 +3,32 @@
 
 
 function submitform() {
-    const name = document.getElementById('name').value;
-    const anggota = document.getElementById('anggota').value.trim().split('\n').map(line => line.trim()).filter(line => line !== '');
+    const selectElement = document.getElementById('choose');
+    switch (selectElement.value) {
+        case "opsi1":
+            window.open('https://github.com/januar7/PSDS-7.0/blob/main/lorem-ipsum.pdf')
 
-    if (anggota.length === 0) {
-        alert('Anggotanya siapa? Masa engga ada anggota sih :v');
-        return;
+        case "opsi2":
+            window.open('https://github.com/januar7/PSDS-7.0/blob/main/lorem-ipsum.pdf')
+
+        case "opsi3":
+            window.open('https://github.com/januar7/PSDS-7.0/blob/main/lorem-ipsum.pdf')
+
     }
-    if (anggota.length > 4) {
-        alert('Maksimal 4 anggota yang bisa ditambahkan.');
-        return;
-    }
+}
+
+//const anggota = document.getElementById('anggota').value.trim().split('\n').map(line => line.trim()).filter(line => line !== '');
+
+/*if (anggota.length === 0) {
+    alert('Anggotanya siapa? Masa engga ada anggota sih :v');
+    return;
 
 }
+if (anggota.length > 4) {
+    alert('Maksimal 4 anggota yang bisa ditambahkan.');
+    return;
+}*/
+
 const form = document.getElementById('response_1');
 form.addEventListener('submit', e => {
     e.preventDefault();

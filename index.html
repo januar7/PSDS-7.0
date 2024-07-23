@@ -5,6 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        html {
+            font-family: Poppins, sans-serif;
+            font-size: 16 px;
+        }
+        
+        .header {
+            position: fixed;
+            display: flex;
+            height: 15.5dvh;
+            width: 100%;
+            background-color: blue;
+            background-image: linear-gradient(to right, blue, maroon);
+        }
+        
+        .inner {
+            position: relative;
+            /*background-color: #c8035f;*/
+            display: flex;
+            width: 55%;
+            height: 100%;
+        }
+        
+        #divimage {
+            /*background: blueviolet; */
+            display: flex-reverse;
+            width: 45%;
+            float: right;
+            /*flex-direction: row-reverse;*/
+            justify-content: flex-end;
+            align-items: center;
+        }
+        
+        .gambar {
+            margin-right: 0.5cm;
+            position: relative;
+        }
+        
         .container {
             display: flex;
             justify-content: center;
@@ -19,6 +56,7 @@
             border: none;
             padding: 10px 20px;
             font-size: 16px;
+            font-weight: bolder;
             cursor: pointer;
             margin-top: 10px;
             border-radius: 4px;
@@ -29,15 +67,15 @@
         }
         
         input {
-            width: 175px;
-            height: 15px;
-            margin-top: 10px;
+            width: 250px;
+            height: 25px;
+            margin-top: 9px;
             outline: none;
             border-radius: 4px;
         }
         
         textarea {
-            width: 175px;
+            width: 197px;
             height: 85px;
             margin-top: 10px;
             outline: none;
@@ -51,35 +89,64 @@
     </style>
     <title>PSDS 7.0</title>
     <link rel="icon" type="images/jpg" href="images\Logo PSDS.png">
-    <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+    <link href="upload_data2.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="simpan_data1.js"></script>
-    <script src="upload_data1.js"></script>
-    <script src="pilih_opsi.js"></script>
+    <!--<script src="upload_data2.js"></script>
+    <script src="pilih_opsi.js"></script>-->
 </head>
 
 <body>
-    <div class=header>
+    <div class="header">
+        <div class="inner" style="float:left">
+            <!--style="text-align: left ;margin:auto ;color:#f3f3f3;font-size:30px;font-weight:550;padding-top:10px;"> FINAL PROJECT-->
+            <div id="text_header" style="margin-left:15px;">
+                <h2 style="text-align: left ;margin:auto ;color: white;font-size:6dvh;font-weight:550;padding-top:10px;"> FINAL PROJECT</h2>
+                <h2 style="text-align: left ;margin:auto ;color:#dcf30e;font: size 5.5dvh;;font-weight:550;padding-top:10px;"> Kelas Mahir</h2>
+            </div>
+        </div>
+        <div class="inner" id="divimage">
+
+
+            <div class="gambar">
+                <img src="images\Logo PSDS.png" style="width:50px ;">
+            </div>
+            <div class="gambar">
+                <img src="images\logo_prodi.png" style="width:50px; border-radius:50%;">
+            </div>
+
+
+            <!--<div class="kotakgambar" style="float:left;"></div>-->
+        </div>
+
         <!-- bikin header yang terdiri dari icon prodi dan logo psds(sebalah kanan) dengan latar belakang gradient merah biru  dengan tulisan  "Final Project Kelas Mahir" di sebelah kiri-->
     </div>
+
     <div class="container">
         <h4>Sebelumnya Isi dulu nama kelompok sama siapa sih angota kalian?? &#128516</h4>
         <!-- take input from user   nama kelompok -->
+        <!--https://script.google.com/macros/s/AKfycbx9FHP25FcTkpuOfrZW5gqQ0AvTtWEQpEBAul_-eOiNrOQq2cHVO9x8jG1r5-r-plN_WQ/exec-->
         <form id="response_1" method="post" action="https://script.google.com/macros/s/AKfycbx9FHP25FcTkpuOfrZW5gqQ0AvTtWEQpEBAul_-eOiNrOQq2cHVO9x8jG1r5-r-plN_WQ/exec" name="final_response" autocomplete="off">
 
-            <input type="text" id="name" name="Nama_Kelompok" placeholder="Nama Kelompok"><br>
+            <input type="text" id="name" name="Nama_Kelompok" placeholder="Nama Kelompok" required style="width: 197px;"><br>
             <textarea id="anggota" name="Anggota" placeholder="Nama Anggota+ NIM(one per line)" autocapitalize="characters"></textarea><br>
-            <label for="choose">Pilih salah satu :</label>
+            <label for="choose">Pilih Soal :</label>
             <select name="pilihan" id="choose">
-                <option value="regresi"> Regresi </option>
-                <option value="classify">Klasifikasi  </option>
-                <option value="cluster"> Klasterisasi </option>
+                <option value="opsi1"> Soal 1 </option>
+                <option value="opsi2"> Soal 2</option>
+                <option value="opsi3"> Soal 3 </option>
+                <option value="opsi4"> Soal 4 </option>
+                <option value="opsi5"> Soal 5 </option>
+                <option value="opsi6"> Soal 6 </option>
 
             </select><br>
             <button type="submit" class="submit-button" onclick="submitform()">Submit</button>
 
         </form>
 
-        <h4>Dataset apa nih yang kalian pakai &#129300 </h4>
+        <h4 id="Data">Dataset apa nih yang kalian pakai &#129300 </h4>
     </div>
     <div>
 
@@ -111,18 +178,33 @@
         </form> -->
 
         <!-- <input type="file"  name="notebook" accept=".ipynb" required> -->
-        <!--File pptx-->
-        <form id="response_2" method="post" action="https://script.google.com/macros/s/AKfycbwJjJIVjE-xR4sA2uxCROE5GBGHUNerRLJ5yszFA8ZhXKQ3o0e6U0RrXdUWg19DZhU0gQ/exec" name="upload_1" autocomplete="off">
-            <input type="hidden" value="" name="fileContent" id="fileContent">
-            <input type="hidden" value="" name="filename" id="filename">
+
+        <form id="response_2" action="https:docs.google.com/forms/d/e/1FAIpQLSeSvPAgvH6kjxXaKFG5njmPGbaskqA7BDakIbtLSX6Z-7jhGQ/viewform?" , method="post">
+            <div class="formGroup">
+                <input type="text" id="name2" name="entry.2143613498" placeholder="Nama " style="width: 207px;" required><br>
+
+            </div>
+
+
+            <!--<input type="hidden" value="" name="fileContent" id="fileContent">
+            <input type="hidden" value="" name="filename" id="filename"> */ -->
             <!-- FIle PYThon notebook-->
-            <label for="ipynb">File IPYNBnya kumpul disini ya :</label>
-            <input type="file" id="ipynb" name="file_ipynb" accept=".ipynb" required><br>
-            <label for="pptx">File PPTnya kumpul disini ya :</label>
-            <input type="file" id="pptx" name="file_pptx" accept=".ppt ,.pptx" required><br>
-            <button type="submit" class="submit-button" style="width: 100%;" onclick="UploadFile();">Submit</button>
-        </form>
-        <!-- Rename file ppt dan ipynb dengan nama dan NIM PJ kelompok:  {NIM}_{NAMA}_{nama_file}.pptx/.ppt {NIM}_{NAMA}_{nama_file}.ipynb
+            <div class="formGroup">
+                <label for="ipynb">File IPYNBnya kumpul disini ya :</label>
+                <input type="file" id="ipynb" name="entry.381151764" accept=".ipynb" required>
+            </div>
+
+            <!--File pptx-->
+            <!--<div class="formGroup">
+                <label for="pptx">File PPTnya kumpul disini ya :</label>
+                <input type="file" id="pptx" name="entry.919642963" accept=".ppt ,.pptx">
+            </div>
+            <div class=""> -->
+            <button type="submit" name="tombol_S" class="submit-button" id="button2" style="width: 100%;">Submit</button>
+    </div>
+
+    </form>
+    <!-- Rename file ppt dan ipynb dengan nama dan NIM PJ kelompok:  {NIM}_{NAMA}_{nama_file}.pptx/.ppt {NIM}_{NAMA}_{nama_file}.ipynb
 
 
 

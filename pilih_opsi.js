@@ -7,17 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     selectElement.addEventListener('change', (event) => {
         if (event.target.value === 'regresi') {
-            regresiCount++;
+            console.log('Regresi dipilih')
+
+            /*regresiCount++;
             if (regresiCount >= maxRegresiSelections) {
                 const regresiOption = selectElement.querySelector('option[value="regresi"]');
-                regresiOption.disabled = true;
-            }
-        } else if (event.target.value === 'classify') {
+                regresiOption.disabled = true;*/
+        }
+        /*} else if (event.target.value === 'classify') {
             classifyCount++;
             if (classifyCount >= maxClassifySelections) {
                 const classifyOption = selectElement.querySelector('option[value="classify"]');
                 classifyOption.disabled = true;
             }
-        }
+        } */
     });
 });
