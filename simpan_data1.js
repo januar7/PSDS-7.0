@@ -6,7 +6,7 @@ function submitform() {
     const selectElement = document.getElementById('choose');
     switch (selectElement.value) {
         case "opsi1":
-            window.open('https://github.com/januar7/PSDS-7.0/blob/main/lorem-ipsum.pdf')
+            window.open('https://github.com/januar7/PSDS-7.0/blob/main/Soal/Soal_1.pdf')
 
         case "opsi2":
             window.open('https://github.com/januar7/PSDS-7.0/blob/main/lorem-ipsum.pdf')
