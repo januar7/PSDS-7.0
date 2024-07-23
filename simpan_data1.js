@@ -28,17 +28,20 @@ if (anggota.length > 4) {
     alert('Maksimal 4 anggota yang bisa ditambahkan.');
     return;
 }*/
-
+window.addEventListener("load", function() {
 const form = document.getElementById('response_1');
-form.addEventListener('submit', e => {
+form.addEventListener('submit', function(e) {
     e.preventDefault();
     const script_URL = e.target.action;
 
     fetch(script_URL, {
             method: 'POST',
-            body: new FormData(form)
+            body: new FormData(form), 
         })
-        .then(response => alert('Data sukses diinput'))
-        .catch(error => console.error('Error!!', error.message))
+        .then(() => {
+            alert('Data sukses diinput');
+        }) 
+       //.catch(error => console.error('Error!!', error.message))
     form.reset()
+});
 });
