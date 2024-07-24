@@ -40,11 +40,12 @@ if (anggota.length > 4) {
     alert('Maksimal 4 anggota yang bisa ditambahkan.');
     return;
 }*/
-window.addEventListener("load", function() {
+//window.addEventListener("load", function() {
+const script_URL='https://script.google.com/macros/s/AKfycbx9FHP25FcTkpuOfrZW5gqQ0AvTtWEQpEBAul_-eOiNrOQq2cHVO9x8jG1r5-r-plN_WQ/exec'
 const form = document.getElementById('response_1');
 form.addEventListener('submit', function(e) {
     e.preventDefault();
-    const script_URL = e.target.action;
+   // const script_URL = e.target.action;
 
     fetch(script_URL, {
             method: 'POST',
@@ -55,6 +56,6 @@ form.addEventListener('submit', function(e) {
             window.location.reload(); 
         })
         //     .catch(error => console.error('Error!!', error.message))
-//    form.reset()
-});
+//   // form.reset()
+//});
 });
