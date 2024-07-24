@@ -41,19 +41,20 @@ if (anggota.length > 4) {
     return;
 }*/
 window.addEventListener("load", function() {
-    const form = document.getElementById('response_1');
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const script_URL = e.target.action;
+const form = document.getElementById('response_1');
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const script_URL = e.target.action;
 
-        fetch(script_URL, {
-                method: 'POST',
-                body: new FormData(form),
-            })
-            .then(() => {
-                alert('Data sukses diinput');
-            })
-            //     .catch(error => console.error('Error!!', error.message))
-        form.reset()
-    });
+    fetch(script_URL, {
+            method: 'POST',
+            body: new FormData(form),
+        })
+        .then(() => {
+            alert('Data sukses diinput');
+        })
+        //     .catch(error => console.error('Error!!', error.message))
+    form.reset()
+});
+});
 });
