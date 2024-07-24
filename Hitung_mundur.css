@@ -1,0 +1,41 @@
+.countdown {
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    position: relative;
+    top: 12.7dvh;
+}
+
+.time .item {
+    position: relative;
+}
+
+.time {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 5px;
+    grid-template-rows: 10px;
+}
+
+#day,
+#hour,
+#minute,
+#seconds {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.time .item::before,
+.time .item::after {
+    position: absolute;
+    width: 6px;
+    height: 20px;
+    content: '';
+    left: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.time .item::after {
+    left: unset;
+    right: 0;
+}

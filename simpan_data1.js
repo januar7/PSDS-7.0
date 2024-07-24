@@ -6,13 +6,25 @@ function submitform() {
     const selectElement = document.getElementById('choose');
     switch (selectElement.value) {
         case "opsi1":
-            window.open('https://github.com/januar7/PSDS-7.0/blob/main/lorem-ipsum.pdf')
+            window.open('https://github.com/januar7/PSDS-7.0/raw/main/Soal/Soal1 Proyek Akhir Kelas Mahir.pdf');
+            break;
 
         case "opsi2":
-            window.open('https://github.com/januar7/PSDS-7.0/blob/main/lorem-ipsum.pdf')
+            window.open('https://github.com/januar7/PSDS-7.0/raw/main/Soal/Soal2 Proyek Akhir Kelas Mahir.pdf');
+            break;
 
         case "opsi3":
-            window.open('https://github.com/januar7/PSDS-7.0/blob/main/lorem-ipsum.pdf')
+            window.open('https://github.com/januar7/PSDS-7.0/raw/main/Soal/Soal3 Proyek Akhir Kelas Mahir.pdf');
+            break;
+        case "opsi4":
+            window.open('https://github.com/januar7/PSDS-7.0/raw/main/Soal/Soal4 Proyek Akhir Kelas Mahir.pdf');
+            break;
+        case "opsi5":
+            window.open('https://github.com/januar7/PSDS-7.0/raw/main/Soal/Soal5 Proyek Akhir Kelas Mahir.pdf');
+            break;
+        case "opsi6":
+            window.open('https://github.com/januar7/PSDS-7.0/raw/main/Soal/Soal6 Proyek Akhir Kelas Mahir.pdf');
+            break;
 
     }
 }
@@ -28,17 +40,20 @@ if (anggota.length > 4) {
     alert('Maksimal 4 anggota yang bisa ditambahkan.');
     return;
 }*/
+window.addEventListener("load", function() {
+    const form = document.getElementById('response_1');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const script_URL = e.target.action;
 
-const form = document.getElementById('response_1');
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    const script_URL = e.target.action;
-
-    fetch(script_URL, {
-            method: 'POST',
-            body: new FormData(form)
-        })
-        .then(response => alert('Data sukses diinput'))
-        .catch(error => console.error('Error!!', error.message))
-    form.reset()
+        fetch(script_URL, {
+                method: 'POST',
+                body: new FormData(form),
+            })
+            .then(() => {
+                alert('Data sukses diinput');
+            })
+            //     .catch(error => console.error('Error!!', error.message))
+        form.reset()
+    });
 });
