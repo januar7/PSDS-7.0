@@ -11,8 +11,9 @@
         }
         
         .header {
-            position: fixed;
+            position: absolute;
             display: flex;
+            top: 0;
             height: 15.5dvh;
             width: 100%;
             background-color: blue;
@@ -90,10 +91,12 @@
     <title>PSDS 7.0</title>
     <link rel="icon" type="images/jpg" href="images\Logo PSDS.png">
     <link href="upload_data2.css" rel="stylesheet" />
+    <link href="Hitung_mundur.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="simpan_data1.js"></script>
+    <script src="Hitung_mundur.js"></script>
     <!--<script src="upload_data2.js"></script>
     <script src="pilih_opsi.js"></script>-->
 </head>
@@ -103,7 +106,7 @@
         <div class="inner" style="float:left">
             <!--style="text-align: left ;margin:auto ;color:#f3f3f3;font-size:30px;font-weight:550;padding-top:10px;"> FINAL PROJECT-->
             <div id="text_header" style="margin-left:15px;">
-                <h2 style="text-align: left ;margin:auto ;color: white;font-size:6dvh;font-weight:550;padding-top:10px;"> FINAL PROJECT</h2>
+                <h2 style="text-align: left ;margin:auto ;color: white;font-size:250%; font-weight:550;padding-top:10px;"> FINAL PROJECT</h2>
                 <h2 style="text-align: left ;margin:auto ;color:#dcf30e;font: size 5.5dvh;;font-weight:550;padding-top:10px;"> Kelas Mahir</h2>
             </div>
         </div>
@@ -123,8 +126,31 @@
 
         <!-- bikin header yang terdiri dari icon prodi dan logo psds(sebalah kanan) dengan latar belakang gradient merah biru  dengan tulisan  "Final Project Kelas Mahir" di sebelah kiri-->
     </div>
+    <div class="countdown">
+        <br>
+        <div class="time">
+            <div class="item">
+                <div id="day">05</div>
+                hari
+            </div>
+            <div class="item">
+                <div id="hour">12</div>
+                jam
+            </div>
+            <div class="item">
+                <div id="minute">30</div>
+                menit
+            </div>
+            <div class="item">
+                <div id="seconds">12</div>
+                detik
+            </div>
+        </div>
+
+    </div>
 
     <div class="container">
+        </br>
         <h4>Sebelumnya Isi dulu nama kelompok sama siapa sih angota kalian?? &#128516</h4>
         <!-- take input from user   nama kelompok -->
         <!--https://script.google.com/macros/s/AKfycbx9FHP25FcTkpuOfrZW5gqQ0AvTtWEQpEBAul_-eOiNrOQq2cHVO9x8jG1r5-r-plN_WQ/exec-->
