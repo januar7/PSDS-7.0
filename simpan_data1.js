@@ -54,7 +54,7 @@ form.addEventListener('submit', function(e) {
             alert('Data sukses diinput');
         })
         //     .catch(error => console.error('Error!!', error.message))
-    form.reset()
+//    form.reset()
 });
 });
 });
