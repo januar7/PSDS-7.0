@@ -52,7 +52,7 @@ form.addEventListener('submit', function(e) {
         })
         .then(() => {
            // alert('Data sukses diinput');
-            window.location.reload(): 
+            window.location.reload(); 
         })
         //     .catch(error => console.error('Error!!', error.message))
 //    form.reset()
