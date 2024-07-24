@@ -6,24 +6,24 @@ function submitform() {
     const selectElement = document.getElementById('choose');
     switch (selectElement.value) {
         case "opsi1":
-            window.open('https://github.com/januar7/PSDS-7.0/raw/main/Soal/Soal1%20Proyek%20Akhir%20Kelas%20Mahir.pdf');
+            window.open('https://github.com/januar7/PSDS-7.0/blob/main/Soal/Soal1%20Proyek%20Akhir%20Kelas%20Mahir.pdf');
             break;
 
         case "opsi2":
-            window.open('https://github.com/januar7/PSDS-7.0/raw/main/Soal/Soal2%20Proyek%20Akhir%20Kelas%20Mahir.pdf');
+            window.open('https://github.com/januar7/PSDS-7.0/blob/main/Soal/Soal2%20Proyek%20Akhir%20Kelas%20Mahir.pdf');
             break;
 
         case "opsi3":
-            window.open('https://github.com/januar7/PSDS-7.0/raw/main/Soal/Soal3%20Proyek%20Akhir%20Kelas%20Mahir.pdf);
+            window.open('https://github.com/januar7/PSDS-7.0/blob/main/Soal/Soal3%20Proyek%20Akhir%20Kelas%20Mahir.pdf);
             break;
         case "opsi4":
-            window.open('https://github.com/januar7/PSDS-7.0/raw/main/Soal/Soal4%20Proyek%20Akhir%20Kelas%20Mahir.pdf');
+            window.open('https://github.com/januar7/PSDS-7.0/blob/main/Soal/Soal4%20Proyek%20Akhir%20Kelas%20Mahir.pdf');
             break;
         case "opsi5":
-            window.open('https://github.com/januar7/PSDS-7.0/raw/main/Soal/Soal5%20Proyek%20Akhir%20Kelas%20Mahir.pdf');
+            window.open('https://github.com/januar7/PSDS-7.0/blob/main/Soal/Soal5%20Proyek%20Akhir%20Kelas%20Mahir.pdf');
             break;
         case "opsi6":
-            window.open('https://github.com/januar7/PSDS-7.0/raw/main/Soal/Soal6%20Proyek%20Akhir%20Kelas%20Mahir.pdf');
+            window.open('https://github.com/januar7/PSDS-7.0/blob/main/Soal/Soal6%20Proyek%20Akhir%20Kelas%20Mahir.pdf');
             break;
 
     }
