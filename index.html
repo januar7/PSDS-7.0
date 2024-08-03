@@ -204,19 +204,18 @@
 
         <!-- <input type="file"  name="notebook" accept=".ipynb" required> -->
 
-        <form id="response_2" action="https:docs.google.com/forms/d/e/1FAIpQLSeSvPAgvH6kjxXaKFG5njmPGbaskqA7BDakIbtLSX6Z-7jhGQ/viewform?" , method="post">
+        <form id="response_2" action="https://script.google.com/macros/s/AKfycbxthO8DbMrgGJMN0k9WIVbX7WUXV-sgXhrlsmXiAghFHWMvufHFh-D5YuJU-6uZS1ljxg/exec" , method="post">
             <div class="formGroup">
-                <input type="text" id="name2" name="entry.2143613498" placeholder="Nama " style="width: 207px;" required><br>
+                <input type="text" id="name2" name="Nama" placeholder="Nama " style="width: 207px;" required><br>
 
+            
+            <input type="hidden" value="" name="fileContent" id="fileContent">
+            <input type="hidden" value="" name="filename" id="filename">
             </div>
-
-
-            <!--<input type="hidden" value="" name="fileContent" id="fileContent">
-            <input type="hidden" value="" name="filename" id="filename"> */ -->
             <!-- FIle PYThon notebook-->
             <div class="formGroup">
                 <label for="ipynb">File IPYNBnya kumpul disini ya :</label>
-                <input type="file" id="ipynb" name="entry.381151764" accept=".ipynb" required>
+                <input type="file" id="ipynb" name="file_ipynb" accept=".ipynb" required>
             </div>
 
             <!--File pptx-->
@@ -225,15 +224,28 @@
                 <input type="file" id="pptx" name="entry.919642963" accept=".ppt ,.pptx">
             </div>
             <div class=""> -->
-            <button type="submit" name="tombol_S" class="submit-button" id="button2" style="width: 100%;">Submit</button>
-    </div>
+            <button type="submit" name="tombol_S" class="submit-button" id="button2" style="width: 100%;" onclick ="UploadFile()">Submit</button>
 
     </form>
-    <!-- Rename file ppt dan ipynb dengan nama dan NIM PJ kelompok:  {NIM}_{NAMA}_{nama_file}.pptx/.ppt {NIM}_{NAMA}_{nama_file}.ipynb
+    
+    <!-- Rename file ppt dan ipynb dengan nama dan NIM PJ kelompok:  {NIM}_{NAMA}_{nama_file}.pptx/.ppt {NIM}_{NAMA}_{nama_file}.ipynb-->
 
 
 
     </div>
+     <script>
+    function UploadFile() {
+    var reader = new FileReader();
+    var file = document.getElementById('ipynb').files[0];
+    reader.onload = function(){
+    document.getElementById('fileContent').value=reader.result;
+    document.getElementById('filename').value=file.name;
+    document.getElementById('response_2').submit();
+    }
+    reader.readAsDataURL(file);
+    }
+    </script>
+    
 
 
 </body>
