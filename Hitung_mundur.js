@@ -1,7 +1,8 @@
 let endDate = new Date("08/6/2024 00:00:00").getTime();
 let check = setInterval(function() {
     let now = new Date().getTime();
-    let distance = endDate - now;
+    let distance = now - endDate;
+    // let distance = edDate - now  for count down
     let day = Math.floor(distance / (24 * 60 * 60 * 1000));
     let hour = Math.floor((distance % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
     let minute = Math.floor((distance % (60 * 60 * 1000)) / (60 * 1000));
